@@ -17,11 +17,9 @@ const userSchema = new mongoose.Schema({
     trim: true,
     match: [/^\S+@\S+\.\S+$/, "Invalid email address"],
   },
-  HashedPassword: {
+  password: {
     type: String,
-    required: () => {
-        return !this.oauthProvider;
-    }
+    required: true,
   },
   oauthProvider: {
     type: String,
@@ -33,11 +31,18 @@ const userSchema = new mongoose.Schema({
     default: null,
   },
   displayName: {
-    type: String,
-    trim: true,
-    maxlength: 20,
+    type:String,
+    default:null
   },
-  Title: {
+  title: {
+    type:String,
+    default:null
+  },
+  bio: {
+    type:String,
+    default:null
+  },
+  nickname: {
     type:String,
     default:null
   },
@@ -72,9 +77,9 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-userSchema.pre('save', (next) => {
+userSchema.pre('save', function(next) {
     this.updatedAt = Date.now()
     next()
 })
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('User', userSchema);
