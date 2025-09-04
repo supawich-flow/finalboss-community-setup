@@ -3,7 +3,7 @@ import rank from "../../assets/Radiant.png";
 
 export default function ValorantProfileOverview() {
   return (
-    <div className="relative overflow-hidden flex w-full h-66 bg-gradient-to-r from-[#2D2D2D] to-[#222222] rounded-3xl shadow-lg py-3 pl-6 text-white">
+    <div className="relative overflow-hidden flex w-full h-66 bg-gradient-to-r from-[#2D2D2D] to-[#222222] rounded-3xl shadow-lg py-5 pl-6 text-white">
       <div>
         <h3 className="text-lg font-semibold mb-3">
           Valorant Profile Overview
@@ -15,24 +15,25 @@ export default function ValorantProfileOverview() {
             <p className="text-gray-400 text-sm">#1tap</p>
           </div>
         </div>
+        <div className="text-sm">
+          <p className="flex items-center gap-2 mb-2">
+            🎮 Main Agents:
+            <span className="font-semibold text-white"> Jett, Clove</span>
+          </p>
 
-        <p className="flex items-center gap-2 text-base mb-2">
-          🎮 Main Agents:
-          <span className="font-semibold text-white"> Jett, Clove</span>
-        </p>
+          <p className="flex items-center gap-2 mb-2">
+            📊 KDA: <span className="font-semibold text-[#FFD700]">1.7</span>
+          </p>
 
-        <p className="flex items-center gap-2 text-base mb-2">
-          📊 KDA: <span className="font-semibold text-[#FFD700]">1.7</span>
-        </p>
+          <p className="flex items-center gap-2 mb-2">
+            🏆 Winrate: <span className="font-semibold text-[#FFD700]">70%</span>
+          </p>
 
-        <p className="flex items-center gap-2 text-base mb-2">
-          🏆 Winrate: <span className="font-semibold text-[#FFD700]">70%</span>
-        </p>
-
-        <p className="flex items-center gap-2 text-base">
-          📅 Last Match:
-          <span className="font-semibold text-white"> 25 ส.ค. </span>
-        </p>
+          <p className="flex items-center gap-2">
+            📅 Last Match:
+            <span className="font-semibold text-white"> 25 ส.ค. </span>
+          </p>
+        </div>
       </div>
       <div className="">
         <img

@@ -1,5 +1,6 @@
-import Gekko from "../../assets/gekko.png"
-import Yoru from "../../assets/yoru.png"
+import Gekko from "../../assets/gekko.png";
+import Yoru from "../../assets/yoru.png";
+import { FaCalendarAlt, FaGamepad, FaUserTag, FaVideo } from "react-icons/fa";
 
 export default function WeeklyHighlight() {
   return (
@@ -16,21 +17,35 @@ export default function WeeklyHighlight() {
             ></iframe>
           </div>
           <div className="w-full md:w-1/3 text-white">
-            <h2 className="text-xl font-bold mb-2">
-              🎥 คลิปไฮไลต์ประจำสัปดาห์
+            <h2 className="text-xl font-bold mb-2 flex items-center gap-2 text-white drop-shadow-sm">
+              <FaVideo className="text-[#E03E3E]" />
+              <span className="text-white">Weekly Highlight</span>
             </h2>
-            <p className="mb-4">
-              ชมคลิปการเล่นที่น่าตื่นเต้นที่สุดของวันนี้ <br />
-              จากผู้เล่น Bomurdy
+            <p className="mb-4 text-zinc-300 leading-relaxed">
+              เพลย์สุดเดือดจากผู้เล่น{" "}
+              <span className="text-white font-medium">Bomburdy</span>{" "}
+              ในสัปดาห์นี้
+              <br />
+              <span className="text-zinc-400 font-light">
+                ห้ามพลาดกับช็อตโคตรเทพที่คุณต้องดูซ้ำ!
+              </span>
             </p>
-            <p>
-              <strong>วันที่:</strong> 28 ส.ค. 2025
+            <p className="flex items-center gap-2 text-zinc-400 mb-1">
+              <FaCalendarAlt className="text-zinc-400 text-sm" />
+              <span className="font-medium text-zinc-300">วันที่:</span>
+              <span className="text-white">28 ส.ค. 2025</span>
             </p>
-            <p>
-              <strong>ผู้เล่น:</strong> Bomburdy
+
+            <p className="flex items-center gap-2 text-zinc-400 mb-1">
+              <FaGamepad className="text-zinc-400 text-sm" />
+              <span className="font-medium text-zinc-300">ผู้เล่น:</span>
+              <span className="text-white">Bomburdy</span>
             </p>
-            <p>
-              <strong>ชื่อเล่น:</strong> บอม
+
+            <p className="flex items-center gap-2 text-zinc-400">
+              <FaUserTag className="text-zinc-400 text-sm" />
+              <span className="font-medium text-zinc-300">ชื่อในเกม:</span>
+              <span className="text-white">บอม</span>
             </p>
           </div>
         </div>

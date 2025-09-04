@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Profile() {
   const { id } = useParams();
-  const { userProfile } = useFetchUserProfileById(id);
+  const { userProfile, loading } = useFetchUserProfileById(id && id !== "undefined" ? id : undefined);
   const [activeTab, setActiveTab] = useState<"posts" | "friends">("posts");
 
   useEffect(() => {
