@@ -30,6 +30,39 @@ const baseAxiosStatic = axios.create({
   baseURL: import.meta.env.VITE_API_URL || "",
 });
 
+function handleError(error: unknown): ErrorApiResponse<any> {
+  if (error instanceof Error) {
+    const isAbort =
+      error.name === "CanceledError" ||
+      error.name === "AbortError" ||
+      (typeof DOMException !== "undefined" &&
+        error instanceof DOMException &&
+        error.code === DOMException.ABORT_ERR);
+
+    if (isAbort) {
+      return {
+        ok: false,
+        code: ERROR_CODES.ABORTED,
+        message: ERROR_MESSAGES.ABORTED,
+      };
+    }
+  }
+
+  if (axios.isAxiosError(error)) {
+    return {
+      ok: false,
+      code: ERROR_CODES.UNKNOWN,
+      message: ERROR_MESSAGES.UNKNOWN,
+    };
+  }
+
+  return {
+    ok: false,
+    code: ERROR_CODES.UNKNOWN,
+    message: ERROR_MESSAGES.UNKNOWN,
+  };
+}
+
 const createRequestFunction = (axiosInstance: AxiosInstance) => {
   return async function createRequest<ResponseData>(
     params: CreateRequestParams,
@@ -66,36 +99,7 @@ const createRequestFunction = (axiosInstance: AxiosInstance) => {
         data: response.data,
       };
     } catch (error: unknown) {
-      if (error instanceof Error) {
-        if (
-          error.name === "CanceledError" ||
-          error.name === "AbortError" ||
-          (typeof DOMException !== "undefined" &&
-            error instanceof DOMException &&
-            error.code === DOMException.ABORT_ERR)
-        ) {
-          // request is aborted by signal
-          return {
-            ok: false,
-            code: ERROR_CODES.ABORTED,
-            message: ERROR_MESSAGES.ABORTED,
-          };
-        }
-      }
-
-      if (axios.isAxiosError(error)) {
-        return {
-          ok: false,
-          code: ERROR_CODES.UNKNOWN,
-          message: ERROR_MESSAGES.UNKNOWN,
-        };
-      }
-
-      return {
-        ok: false,
-        code: ERROR_CODES.UNKNOWN,
-        message: ERROR_MESSAGES.UNKNOWN,
-      };
+      return handleError(error);
     }
   };
 };

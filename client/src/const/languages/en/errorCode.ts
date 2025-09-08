@@ -1,7 +1,5 @@
-import {
-  ERROR_CODES as thErrorCode,
-  ERROR_MESSAGES as thErrorMessage,
-} from "../th/errorCode";
+import { ERROR_CODES as thErrorCode } from "../th/errorCode";
+import { ERROR_MESSAGES as thErrorMessage } from "../th/errorMessage";
 
 type ErrorCode = typeof thErrorCode;
 type ErrorMessage = typeof thErrorMessage;
