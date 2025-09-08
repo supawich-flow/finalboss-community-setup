@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import unknownProfile from "../../assets/Unknown_User.jpg";
 import UploadPhotoModal from "../../components/modals/UploadPhotoModal/UploadPhotoModal";
 import { useNavigate } from "react-router-dom";
-import { formatDate } from "../../utils/time";
+import { formatDate } from "../../utils copy/time";
 import { useAuth } from "../../context/AuthContext";
 
 type ProfileType = {
