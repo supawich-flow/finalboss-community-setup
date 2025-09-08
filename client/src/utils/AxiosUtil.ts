@@ -4,7 +4,8 @@ import axios, {
   type AxiosRequestConfig,
   type AxiosResponse,
 } from "axios";
-import { ERROR_CODES, ERROR_MESSAGES } from "@/const/languages/th/errorCode";
+import { ERROR_CODES } from "@/const/languages/th/errorCode";
+import { ERROR_MESSAGES } from "@/const/languages/th/errorMessage";
 
 type CreateRequestParams = {
   method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
@@ -99,6 +100,7 @@ const createRequestFunction = (axiosInstance: AxiosInstance) => {
         data: response.data,
       };
     } catch (error: unknown) {
+      console.log("axios error", error);
       return handleError(error);
     }
   };

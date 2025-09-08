@@ -1,5 +1,5 @@
 import { FaCircleArrowRight } from "react-icons/fa6";
-import Jett from "../../assets/jett_agent.png";
+import Jett from "../../../assets/jett_agent.png";
 
 export default function CusTomSchedule() {
   return (
@@ -26,3 +26,5 @@ export default function CusTomSchedule() {
     </div>
   );
 }
+
+

@@ -1,5 +1,5 @@
-import unknownUserProfile from "../../assets/Unknown_User.jpg"
-import { useAuth } from "../../context/AuthContext";
+import unknownUserProfile from "../../../assets/Unknown_User.jpg"
+import { useAuth } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
@@ -39,3 +39,5 @@ const { currentUser } = useAuth()
     </div>
   );
 }
+
+

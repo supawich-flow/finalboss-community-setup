@@ -1,4 +1,4 @@
-import unknownProfile from "../../assets/Unknown_User.jpg";
+import unknownProfile from "../../../assets/Unknown_User.jpg";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 
 export default function Friends() {
@@ -115,3 +115,5 @@ export default function Friends() {
     </div>
   );
 }
+
+

@@ -1,5 +1,5 @@
-import Gekko from "../../assets/gekko.png";
-import Yoru from "../../assets/yoru.png";
+import Gekko from "../../../assets/gekko.png";
+import Yoru from "../../../assets/yoru.png";
 import { FaCalendarAlt, FaGamepad, FaUserTag, FaVideo } from "react-icons/fa";
 
 export default function WeeklyHighlight() {
@@ -22,13 +22,9 @@ export default function WeeklyHighlight() {
               <span className="text-white">Weekly Highlight</span>
             </h2>
             <p className="mb-4 text-zinc-300 leading-relaxed">
-              เพลย์สุดเดือดจากผู้เล่น{" "}
-              <span className="text-white font-medium">Bomburdy</span>{" "}
-              ในสัปดาห์นี้
+              เพลย์สุดเดือดจากผู้เล่น <span className="text-white font-medium">Bomburdy</span> ในสัปดาห์นี้
               <br />
-              <span className="text-zinc-400 font-light">
-                ห้ามพลาดกับช็อตโคตรเทพที่คุณต้องดูซ้ำ!
-              </span>
+              <span className="text-zinc-400 font-light">ห้ามพลาดกับช็อตโคตรเทพที่คุณต้องดูซ้ำ!</span>
             </p>
             <p className="flex items-center gap-2 text-zinc-400 mb-1">
               <FaCalendarAlt className="text-zinc-400 text-sm" />
@@ -51,19 +47,13 @@ export default function WeeklyHighlight() {
         </div>
       </div>
       <div className="">
-        <img
-          className="absolute right-0 translate-y-40 translate-x-10 bottom-0 h-100 object-contain"
-          src={Yoru}
-          alt=""
-        />
+        <img className="absolute right-0 translate-y-40 translate-x-10 bottom-0 h-100 object-contain" src={Yoru} alt="" />
       </div>
       <div className="">
-        <img
-          className="absolute right-0 translate-y-40 translate-x-[-70px] bottom-0 h-90 object-contain"
-          src={Gekko}
-          alt=""
-        />
+        <img className="absolute right-0 translate-y-40 translate-x-[-70px] bottom-0 h-90 object-contain" src={Gekko} alt="" />
       </div>
     </div>
   );
 }
+
+

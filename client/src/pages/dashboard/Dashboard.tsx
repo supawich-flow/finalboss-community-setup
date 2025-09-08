@@ -1,10 +1,10 @@
 // import dashboard components
-import ValorantProfileOverview from "../../components/dashboard/ValorantProfileOverview";
-import DailyShoutOut from "../../components/dashboard/DailyShoutOut";
-import WeeklyHighlight from "../../components/dashboard/WeeklyHighlight";
-import CustomSchedule from "../../components/dashboard/CustomSchedule";
-import Profile from "../../components/dashboard/Profile";
-import Friends from "../../components/dashboard/Friends";
+import ValorantProfileOverview from "../../features/dashboard/components/ValorantProfileOverview";
+import DailyShoutOut from "../../features/dashboard/components/DailyShoutOut";
+import WeeklyHighlight from "../../features/dashboard/components/WeeklyHighlight";
+import CustomSchedule from "../../features/dashboard/components/CustomSchedule";
+import Profile from "../../features/dashboard/components/Profile";
+import Friends from "../../features/dashboard/components/Friends";
 
 export default function Dashboard() {
   return (

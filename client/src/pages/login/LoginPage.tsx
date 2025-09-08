@@ -1,4 +1,3 @@
-import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -7,6 +6,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../../features/auth/schemas/login.schema";
 import type { LoginSchemaType } from "../../features/auth/schemas/login.schema";
 import logo from "../../../public/Finallboss logo_formatted.png";
+import { AxiosUtil } from "@/utils/AxiosUtil";
+
+type LoginResponse = {
+  token: string;
+  userData: any;
+};
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -24,22 +29,18 @@ export default function LoginPage() {
   const onSubmit = async (data: LoginSchemaType) => {
     const toastId = toast.loading("กำลังเข้าสู่ระบบ...");
 
-    try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        data
-      );
-      login(res.data.token, res.data.userData);
+    const response = await AxiosUtil.createRequest<LoginResponse>({
+      method: "POST",
+      url: "/api/auth/login",
+      data: data,
+    });
+
+    if (response.ok) {
+      login(response.data.token, response.data.userData);
       toast.success("เข้าสู่ระบบสำเร็จ!", { id: toastId });
-    } catch (err: any) {
-      console.log("Login Error:", err.response);
-      if (err.response && err.response.data && err.response.data.error) {
-        toast.error(`เข้าสู่ระบบล้มเหลว: ${err.response.data.error}!`, {
-          id: toastId,
-        });
-      } else {
-        toast.error("เข้าสู่ระบบล้มเหลว", { id: toastId });
-      }
+    } else {
+      console.log("Login Error:", response);
+      toast.error(`เข้าสู่ระบบล้มเหลว: ${response.message}`, { id: toastId });
     }
   };
 

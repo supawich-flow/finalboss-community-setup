@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import unknownProfile from "../../assets/Unknown_User.jpg";
-import UploadPhotoModal from "../../components/modals/UploadPhotoModal/UploadPhotoModal";
+import UploadPhotoModal from "../../features/user/components/UploadPhotoModal";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils copy/time";
 import { useAuth } from "../../context/AuthContext";

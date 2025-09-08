@@ -60,8 +60,7 @@ export default function UploadPhotoModal({
       const formData = new FormData();
       formData.append("avatar", imageFile);
 
-
-      const token = localStorage.getItem("token"); // ถ้ามีระบบ auth
+      const token = localStorage.getItem("token");
       const res = await axios.post(
         "http://localhost:5000/api/users/me/editprofile",
         formData,
@@ -144,3 +143,5 @@ export default function UploadPhotoModal({
     </div>
   );
 }
+
+

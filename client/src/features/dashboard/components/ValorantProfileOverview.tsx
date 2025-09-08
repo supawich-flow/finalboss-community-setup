@@ -1,13 +1,11 @@
-import Phoenix from "../../assets/phoenix.png";
-import rank from "../../assets/Radiant.png";
+import Phoenix from "../../../assets/phoenix.png";
+import rank from "../../../assets/Radiant.png";
 
 export default function ValorantProfileOverview() {
   return (
     <div className="relative overflow-hidden flex w-full h-66 bg-gradient-to-r from-[#2D2D2D] to-[#222222] rounded-3xl shadow-lg py-5 pl-6 text-white">
       <div>
-        <h3 className="text-lg font-semibold mb-3">
-          Valorant Profile Overview
-        </h3>
+        <h3 className="text-lg font-semibold mb-3">Valorant Profile Overview</h3>
         <div className="flex items-center gap-3 mb-4">
           <img src={rank} alt="Bomburdy" className="w-15 h-15" />
           <div>
@@ -36,12 +34,10 @@ export default function ValorantProfileOverview() {
         </div>
       </div>
       <div className="">
-        <img
-          className="absolute right-0 translate-y-35 translate-x-15 bottom-0 h-90 object-contain"
-          src={Phoenix}
-          alt=""
-        />
+        <img className="absolute right-0 translate-y-35 translate-x-15 bottom-0 h-90 object-contain" src={Phoenix} alt="" />
       </div>
     </div>
   );
 }
+
+

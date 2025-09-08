@@ -1,4 +1,4 @@
-import Deadlock from "../../assets/deadlock.png";
+import Deadlock from "../../../assets/deadlock.png";
 import { IoMdMegaphone } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
@@ -62,3 +62,5 @@ export default function DailyShoutOut() {
     </div>
   );
 }
+ 
+
